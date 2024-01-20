@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.e_commerce.manager.mapper.SysMenuMapper">
+    <resultMap id="sysMenuMap" type="com.example.e_commerce.model.entity.system.SysMenu" autoMapping="true"></resultMap>
+
+    <sql id="columns">
+        id,
+        parent_id,
+        title,
+        component,
+        sort_value,
+        status,
+        create_time,
+        update_time,
+        is_deleted
+    </sql>
+
+<!--    添加菜单-->
+    <insert id="addMenu">
+        insert into sys_menu(
+            parent_id,
+            title,
+            component,
+            sort_value,
+            status
+        )values (
+            #{parentId},
+            #{title},
+            #{component},
+            #{sortValue},
+            #{status}
+        )
+    </insert>
+
+<!--    修改菜单-->
+    <update id="updateMenu">
+        update sys_menu set
+
+        <if test="parentId != null and parentId != ''">
+            parent_id = #{parentId},
+        </if>
+        <if test="title != null and title != ''">
+            title = #{title},
+        </if>
+        <if test="component != null and component != ''">
+            component = #{component},
+        </if>
+        <if test="sortValue != null">
+            sort_value = #{sortValue},
+        </if>
+        <if test="status != null">
+            status = #{status},
+        </if>
+        update_time =  now()
+
+        where id = #{id}
+    </update>
+
+    <select id="findAllMenus" resultMap="sysMenuMap">
+        select <include refid="columns"/> from sys_menu
+        where is_deleted = 0
+        order by sort_value
+    </select>
+
+<!--    查询用户可以操作菜单-->
+    <select id="findMenusByUserId" resultType="com.example.e_commerce.model.entity.system.SysMenu">
+        select distinct
+            m.id,
+            m.parent_id,
+            m.title,
+            m.component,
+            m.sort_value,
+            m.status,
+            m.create_time,
+            m.update_time,
+            m.is_deleted
+        from sys_menu m
+        join sys_role_menu rm on m.id = rm.menu_id
+        join sys_user_role ur on rm.role_id = ur.role_id
+        where ur.user_id = #{userId} and m.is_deleted = 0 and rm.is_deleted = 0 and ur.is_deleted = 0
+    </select>
+</mapper>

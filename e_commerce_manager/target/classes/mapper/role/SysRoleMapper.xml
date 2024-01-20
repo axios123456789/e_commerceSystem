@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.e_commerce.manager.mapper.SysRoleMapper">
+    <!--  映射查询到的字段 -->
+    <resultMap id="sysRoleMap" type="com.example.e_commerce.model.entity.system.SysRole" autoMapping="true"></resultMap>
+
+    <sql id="columns">
+        id,
+        role_name,
+        role_code,
+        description,
+        create_time,
+        update_time,
+        is_deleted
+    </sql>
+
+<!--    添加角色-->
+    <insert id="addSysRole">
+        insert into sys_role(
+            role_name,
+            role_code,
+            description
+        )values (
+            #{roleName},
+            #{roleCode},
+            #{description}
+        )
+    </insert>
+
+<!--    修改角色-->
+    <update id="updateSysRole">
+        update sys_role
+
+        set
+
+        <if test="roleName != null and roleName != ''">
+            role_name = #{roleName},
+        </if>
+        <if test="roleCode != null and roleCode != ''">
+            role_code = #{roleCode},
+        </if>
+        <if test="description != null and description != ''">
+            description = #{description},
+        </if>
+        update_time = now()
+
+        where id = #{id}
+    </update>
+
+<!--    逻辑删除角色-->
+    <update id="deleteSysRoleById">
+        update sys_role
+
+        set
+
+        is_deleted = 1
+
+        where id = #{roleId}
+    </update>
+
+    <!--条件查询角色-->
+    <select id="findSysRoleByCondition" resultMap="sysRoleMap">
+        select <include refid="columns"/>
+        from sys_role
+        <where>
+            <if test="roleName != null and roleName != ''">
+                and role_name like concat('%', #{roleName}, '%')
+            </if>
+            and is_deleted=0
+        </where>
+        order by id desc
+    </select>
+</mapper>

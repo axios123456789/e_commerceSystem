@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.e_commerce.manager.mapper.SysRoleAndMenuRelation">
+<!--    保存分配数据-->
+    <insert id="addAllocateData">
+        insert into sys_role_menu (
+              role_id,
+              menu_id,
+              is_half
+        )
+        values
+        <foreach collection="menuIdList" item="item" separator=",">
+            (#{roleId}, #{item.id}, #{item.isHalf})
+        </foreach>
+    </insert>
+
+<!--    将isHalf变为半开状态-->
+    <update id="updateSysRoleMenuIsHalf">
+        update sys_role_menu set is_half = 1 where menu_id = #{id}
+    </update>
+
+    <!--查询分配过的菜单id-->
+    <select id="selectMenuIdsByRoleId" resultType="java.lang.Long">
+        select menu_id from sys_role_menu where role_id = #{roleId} and is_deleted = 0 and is_half = 0;
+    </select>
+</mapper>
