@@ -2955,3 +2955,95 @@ java.lang.NullPointerException: Cannot invoke "String.getBytes()" because the re
 2024-01-31 18:26:19 HikariPool-1 - Starting...
 2024-01-31 18:26:19 HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7ece3185
 2024-01-31 18:26:19 HikariPool-1 - Start completed.
+2024-02-01 20:07:10 Starting ManagerApplication using Java 17.0.1 with PID 17576 (D:\learnJava\javaProjectExcise\e_commerce\e_commerce_manager\target\classes started by 20183 in D:\learnJava\javaProjectExcise\e_commerce)
+2024-02-01 20:07:10 The following 1 profile is active: "dev"
+2024-02-01 20:07:11 Multiple Spring Data modules found, entering strict repository configuration mode
+2024-02-01 20:07:11 Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-02-01 20:07:11 Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2024-02-01 20:07:12 Tomcat initialized with port(s): 8501 (http)
+2024-02-01 20:07:12 An older version [1.2.35] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.1]
+2024-02-01 20:07:12 Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-02-01 20:07:12 OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-02-01 20:07:12 Initializing ProtocolHandler ["http-nio-8501"]
+2024-02-01 20:07:12 Starting service [Tomcat]
+2024-02-01 20:07:12 Starting Servlet engine: [Apache Tomcat/10.1.7]
+2024-02-01 20:07:12 Initializing Spring embedded WebApplicationContext
+2024-02-01 20:07:12 Root WebApplicationContext: initialization completed in 1443 ms
+2024-02-01 20:07:14 Starting ProtocolHandler ["http-nio-8501"]
+2024-02-01 20:07:14 Tomcat started on port(s): 8501 (http) with context path ''
+2024-02-01 20:07:14 Started ManagerApplication in 4.494 seconds (process running for 5.378)
+2024-02-01 20:07:49 Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-01 20:07:49 Initializing Servlet 'dispatcherServlet'
+2024-02-01 20:07:49 Completed initialization in 2 ms
+2024-02-01 20:08:00 HikariPool-1 - Starting...
+2024-02-01 20:08:00 HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@52f038cd
+2024-02-01 20:08:00 HikariPool-1 - Start completed.
+2024-02-01 20:38:15 Starting ManagerApplication using Java 17.0.1 with PID 1256 (D:\learnJava\javaProjectExcise\e_commerce\e_commerce_manager\target\classes started by 20183 in D:\learnJava\javaProjectExcise\e_commerce)
+2024-02-01 20:38:15 The following 1 profile is active: "dev"
+2024-02-01 20:38:16 Multiple Spring Data modules found, entering strict repository configuration mode
+2024-02-01 20:38:16 Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-02-01 20:38:16 Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
+2024-02-01 20:38:17 Tomcat initialized with port(s): 8501 (http)
+2024-02-01 20:38:17 An older version [1.2.35] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.1]
+2024-02-01 20:38:17 Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-02-01 20:38:17 OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-02-01 20:38:17 Initializing ProtocolHandler ["http-nio-8501"]
+2024-02-01 20:38:17 Starting service [Tomcat]
+2024-02-01 20:38:17 Starting Servlet engine: [Apache Tomcat/10.1.7]
+2024-02-01 20:38:17 Initializing Spring embedded WebApplicationContext
+2024-02-01 20:38:17 Root WebApplicationContext: initialization completed in 1991 ms
+2024-02-01 20:38:20 Starting ProtocolHandler ["http-nio-8501"]
+2024-02-01 20:38:20 Tomcat started on port(s): 8501 (http) with context path ''
+2024-02-01 20:38:20 Started ManagerApplication in 6.165 seconds (process running for 7.25)
+2024-02-01 20:39:01 Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-01 20:39:01 Initializing Servlet 'dispatcherServlet'
+2024-02-01 20:39:01 Completed initialization in 3 ms
+2024-02-01 20:39:03 HikariPool-1 - Starting...
+2024-02-01 20:39:03 HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5319a9de
+2024-02-01 20:39:03 HikariPool-1 - Start completed.
+2024-02-02 20:14:46 Starting ManagerApplication using Java 17.0.1 with PID 3240 (D:\learnJava\javaProjectExcise\e_commerce\e_commerce_manager\target\classes started by 20183 in D:\learnJava\javaProjectExcise\e_commerce)
+2024-02-02 20:14:46 The following 1 profile is active: "dev"
+2024-02-02 20:14:47 Multiple Spring Data modules found, entering strict repository configuration mode
+2024-02-02 20:14:47 Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-02-02 20:14:47 Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2024-02-02 20:14:48 Tomcat initialized with port(s): 8501 (http)
+2024-02-02 20:14:48 An older version [1.2.35] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.1]
+2024-02-02 20:14:48 Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-02-02 20:14:48 OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-02-02 20:14:48 Initializing ProtocolHandler ["http-nio-8501"]
+2024-02-02 20:14:48 Starting service [Tomcat]
+2024-02-02 20:14:48 Starting Servlet engine: [Apache Tomcat/10.1.7]
+2024-02-02 20:14:48 Initializing Spring embedded WebApplicationContext
+2024-02-02 20:14:48 Root WebApplicationContext: initialization completed in 1512 ms
+2024-02-02 20:14:51 Starting ProtocolHandler ["http-nio-8501"]
+2024-02-02 20:14:51 Tomcat started on port(s): 8501 (http) with context path ''
+2024-02-02 20:14:51 Started ManagerApplication in 5.068 seconds (process running for 5.797)
+2024-02-02 20:15:32 Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-02 20:15:32 Initializing Servlet 'dispatcherServlet'
+2024-02-02 20:15:32 Completed initialization in 2 ms
+2024-02-02 20:15:42 HikariPool-1 - Starting...
+2024-02-02 20:15:42 HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@79b62e02
+2024-02-02 20:15:42 HikariPool-1 - Start completed.
+2024-02-02 21:05:43 Starting ManagerApplication using Java 17.0.1 with PID 15564 (D:\learnJava\javaProjectExcise\e_commerce\e_commerce_manager\target\classes started by 20183 in D:\learnJava\javaProjectExcise\e_commerce)
+2024-02-02 21:05:43 The following 1 profile is active: "dev"
+2024-02-02 21:05:43 Multiple Spring Data modules found, entering strict repository configuration mode
+2024-02-02 21:05:43 Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-02-02 21:05:43 Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2024-02-02 21:05:44 Tomcat initialized with port(s): 8501 (http)
+2024-02-02 21:05:44 An older version [1.2.35] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.1]
+2024-02-02 21:05:44 Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-02-02 21:05:44 OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-02-02 21:05:44 Initializing ProtocolHandler ["http-nio-8501"]
+2024-02-02 21:05:44 Starting service [Tomcat]
+2024-02-02 21:05:44 Starting Servlet engine: [Apache Tomcat/10.1.7]
+2024-02-02 21:05:44 Initializing Spring embedded WebApplicationContext
+2024-02-02 21:05:44 Root WebApplicationContext: initialization completed in 1380 ms
+2024-02-02 21:05:46 Starting ProtocolHandler ["http-nio-8501"]
+2024-02-02 21:05:46 Tomcat started on port(s): 8501 (http) with context path ''
+2024-02-02 21:05:46 Started ManagerApplication in 4.327 seconds (process running for 5.318)
+2024-02-02 21:05:49 Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-02 21:05:49 Initializing Servlet 'dispatcherServlet'
+2024-02-02 21:05:49 Completed initialization in 1 ms
+2024-02-02 21:05:49 HikariPool-1 - Starting...
+2024-02-02 21:05:50 HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5b057a27
+2024-02-02 21:05:50 HikariPool-1 - Start completed.
