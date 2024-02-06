@@ -3,7 +3,6 @@ package com.example.e_commerce.manager.service.impl;
 import cn.hutool.core.util.StrUtil;
 import com.alibaba.fastjson.JSON;
 import com.example.e_commerce.common_service.exception.MyException;
-import com.example.e_commerce.manager.util.ManualCreateTransaction;
 import com.example.e_commerce.manager.mapper.SysRoleAndUserRelation;
 import com.example.e_commerce.manager.mapper.SysUserMapper;
 import com.example.e_commerce.manager.service.SysUserService;
@@ -19,8 +18,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.PlatformTransactionManager;
-import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.interceptor.TransactionAspectSupport;
 import org.springframework.util.DigestUtils;
 import java.util.HashMap;
 import java.util.List;
@@ -36,9 +35,6 @@ public class SysUserServiceImpl implements SysUserService {
 
     @Autowired
     private SysRoleAndUserRelation sysRoleAndUserRelation;
-
-    @Autowired
-    private PlatformTransactionManager transactionManager;
 
     @Autowired
     private RedisTemplate redisTemplate;
@@ -153,7 +149,6 @@ public class SysUserServiceImpl implements SysUserService {
      * @return
      */
     @Override
-    @Transactional
     public boolean addSysUser(SysUser sysUser) {
         //判断用户名是否重复
         SysUser sysUser1 = sysUserMapper.getSysUserByUserName(sysUser.getUserName());
@@ -185,7 +180,6 @@ public class SysUserServiceImpl implements SysUserService {
      * @return
      */
     @Override
-    @Transactional
     public boolean updateSysUser(SysUser sysUser) {
         try {
             sysUserMapper.updateSysUser(sysUser);
@@ -203,7 +197,6 @@ public class SysUserServiceImpl implements SysUserService {
      * @return
      */
     @Override
-    @Transactional
     public boolean deleteSysUserById(Long userId) {
         try {
             sysUserMapper.deleteSysUserById(userId);
@@ -223,7 +216,7 @@ public class SysUserServiceImpl implements SysUserService {
     @Override
     @Transactional
     public boolean allocateRoles(AssginRoleDto assginRoleDto) {
-        TransactionStatus status = transactionManager.getTransaction(ManualCreateTransaction.getManualCreateTransaction());
+        //TransactionStatus status = transactionManager.getTransaction(ManualCreateTransaction.getManualCreateTransaction());
         try {
             //分配角色前先删除之前已经分配过的角色
             sysRoleAndUserRelation.deleteRoleByUserId(assginRoleDto.getUserId());
@@ -242,11 +235,12 @@ public class SysUserServiceImpl implements SysUserService {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            transactionManager.rollback(status);
+            TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+            //transactionManager.rollback(status);
             return false;
         }
 
-        transactionManager.commit(status);
+        //transactionManager.commit(status);
         return true;
     }
 }

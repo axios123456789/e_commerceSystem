@@ -8,11 +8,20 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/admin/product/brand")
 public class BrandController {
     @Autowired
     private BrandService brandService;
+
+    //查询所以品牌
+    @GetMapping("/findAll")
+    public Result findAll(){
+        List<Brand> brands = brandService.findAll();
+        return Result.build(brands, ResultCodeEnum.SUCCESS);
+    }
 
     //品牌列表
     @GetMapping("/{page}/{limit}")

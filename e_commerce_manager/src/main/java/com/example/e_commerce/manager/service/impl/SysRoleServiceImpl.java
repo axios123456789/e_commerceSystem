@@ -14,7 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.TransactionStatus;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashMap;
 import java.util.List;
@@ -60,7 +59,6 @@ public class SysRoleServiceImpl implements SysRoleService {
      * @param sysRole
      */
     @Override
-    @Transactional
     public boolean addSysRole(SysRole sysRole) {
         try {
             sysRoleMapper.addSysRole(sysRole);
@@ -77,7 +75,6 @@ public class SysRoleServiceImpl implements SysRoleService {
      * @return
      */
     @Override
-    @Transactional
     public boolean updateSysRole(SysRole sysRole) {
         try {
             sysRoleMapper.updateSysRole(sysRole);
@@ -94,7 +91,6 @@ public class SysRoleServiceImpl implements SysRoleService {
      * @return
      */
     @Override
-    @Transactional
     public boolean deleteSysRoleById(Long roleId) {
         try {
             sysRoleMapper.deleteSysRoleById(roleId);
@@ -131,7 +127,6 @@ public class SysRoleServiceImpl implements SysRoleService {
      * @return
      */
     @Override
-    @Transactional
     public boolean allocateMenus(AssginMenuDto assginMenuDto) {
         TransactionStatus status = transactionManager.getTransaction(ManualCreateTransaction.getManualCreateTransaction());
         try {

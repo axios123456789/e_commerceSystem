@@ -2,6 +2,14 @@ import request from "@/utils/request";
 
 const api_name = '/admin/product/brand'
 
+//查询所以品牌
+export const FindAllBrand = () => {
+    return request({
+        url: `${api_name}/findAll`,
+        method: 'get',
+    })
+}
+
 //列表
 export const BrandList = (page, limit) => {
     return request({

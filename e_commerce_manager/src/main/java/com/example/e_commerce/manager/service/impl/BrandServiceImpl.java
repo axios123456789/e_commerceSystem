@@ -7,7 +7,6 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -42,7 +41,6 @@ public class BrandServiceImpl implements BrandService {
      * @return
      */
     @Override
-    @Transactional
     public boolean save(Brand brand) {
         try {
             brandMapper.addBrand(brand);
@@ -60,7 +58,6 @@ public class BrandServiceImpl implements BrandService {
      * @return
      */
     @Override
-    @Transactional
     public boolean update(Brand brand) {
         try {
             brandMapper.updateBrand(brand);
@@ -78,7 +75,6 @@ public class BrandServiceImpl implements BrandService {
      * @return
      */
     @Override
-    @Transactional
     public boolean deleted(Long id) {
         try {
             brandMapper.deletedById(id);
@@ -88,5 +84,16 @@ public class BrandServiceImpl implements BrandService {
         }
 
         return true;
+    }
+
+    /**
+     * 查询所以品牌
+     * @return
+     */
+    @Override
+    public List<Brand> findAll() {
+        List<Brand> brands = brandMapper.selectByPage();
+
+        return brands;
     }
 }

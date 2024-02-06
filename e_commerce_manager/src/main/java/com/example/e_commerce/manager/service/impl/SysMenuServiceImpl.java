@@ -11,7 +11,6 @@ import com.example.e_commerce.model.vo.common.ResultCodeEnum;
 import com.example.e_commerce.model.vo.system.SysMenuVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
 import java.util.HashMap;
@@ -51,7 +50,6 @@ public class SysMenuServiceImpl implements SysMenuService {
      * @return
      */
     @Override
-    @Transactional
     public boolean addMenu(SysMenu sysMenu) {
         try {
             sysMenuMapper.addMenu(sysMenu);
@@ -69,7 +67,6 @@ public class SysMenuServiceImpl implements SysMenuService {
      * @return
      */
     @Override
-    @Transactional
     public boolean updateMenu(SysMenu sysMenu) {
         try {
             sysMenuMapper.updateMenu(sysMenu);
@@ -87,7 +84,6 @@ public class SysMenuServiceImpl implements SysMenuService {
      * @return
      */
     @Override
-    @Transactional
     public boolean deleteMenuById(Long id) {
         //根据当前菜单id，查询是否包含子菜单
         int childrenCountById = sysMenuMapper.getChildrenCountById(id);
