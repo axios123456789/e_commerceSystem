@@ -12,6 +12,17 @@
        )
     </insert>
 
+<!--    修改-->
+    <update id="update">
+        update category_brand set
+
+        brand_id = #{brandId},
+        category_id = #{categoryId},
+        update_time = now()
+
+        where id = #{id}
+    </update>
+
     <select id="selectAllByCondition" resultType="com.example.e_commerce.model.entity.product.CategoryBrand">
         select cb.*,
                c.name as categoryName,

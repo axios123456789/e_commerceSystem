@@ -53,4 +53,38 @@ public class CategoryBrandServiceImpl implements CategoryBrandService {
 
         return true;
     }
+
+    /**
+     * 修改
+     * @param categoryBrand
+     * @return
+     */
+    @Override
+    public boolean update(CategoryBrand categoryBrand) {
+        try {
+            categoryBrandMapper.update(categoryBrand);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * 删除
+     * @param id
+     * @return
+     */
+    @Override
+    public boolean deleteById(Long id) {
+        try {
+            categoryBrandMapper.deleteById(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+
+        return true;
+    }
 }

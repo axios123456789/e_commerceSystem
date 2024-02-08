@@ -8,4 +8,8 @@ public interface CategoryBrandService {
     PageInfo<CategoryBrand> findByPage(Integer page, Integer limit, CategoryBrandDto categoryBrandDto); //条件分页查询
 
     boolean save(CategoryBrand categoryBrand);  //添加
+
+    boolean update(CategoryBrand categoryBrand);    //修改
+
+    boolean deleteById(Long id);    //删除
 }

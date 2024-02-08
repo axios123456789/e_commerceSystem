@@ -35,4 +35,28 @@ public class CategoryBrandController {
             return Result.build(null, 500, "添加分类品牌失败~");
         }
     }
+
+    //修改
+    @PutMapping("/update")
+    public Result update(@RequestBody CategoryBrand categoryBrand){
+        boolean flag = categoryBrandService.update(categoryBrand);
+
+        if (flag){
+            return Result.build(null, ResultCodeEnum.SUCCESS);
+        }else {
+            return Result.build(null, 500, "修改分类品牌失败~");
+        }
+    }
+
+    //删除
+    @DeleteMapping("/deleteById/{id}")
+    public Result deleteById(@PathVariable("id") Long id){
+        boolean flag = categoryBrandService.deleteById(id);
+
+        if (flag){
+            return Result.build(null, ResultCodeEnum.SUCCESS);
+        }else {
+            return Result.build(null, 500, "删除分类品牌失败~");
+        }
+    }
 }
