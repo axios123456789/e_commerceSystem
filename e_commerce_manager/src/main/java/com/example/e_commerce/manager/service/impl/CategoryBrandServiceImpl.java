@@ -28,7 +28,7 @@ public class CategoryBrandServiceImpl implements CategoryBrandService {
         //设置分页参数
         PageHelper.startPage(page, limit);
 
-        //条件查询所以分类品牌
+        //条件查询所有分类品牌
         List<CategoryBrand> categoryBrands = categoryBrandMapper.selectAllByCondition(categoryBrandDto);
 
         //将数据封装成pageInfo

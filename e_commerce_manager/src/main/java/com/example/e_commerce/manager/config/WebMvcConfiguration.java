@@ -16,11 +16,10 @@ public class WebMvcConfiguration implements WebMvcConfigurer {
     @Autowired
     private UserProperties userProperties;
 
-    //注册拦截器
+    //注册拦截器 .excludePathPatterns("/admin/system/index/login",
+    //                        "/admin/system/index/generateValidateCode")
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(loginAuthInterceptor)
-                .excludePathPatterns("/admin/system/index/login",
-                        "/admin/system/index/generateValidateCode")
                 .excludePathPatterns(userProperties.getNoAuthUrls())//不需要拦截的路径
                 .addPathPatterns("/**");    //需要拦截的路径
     }

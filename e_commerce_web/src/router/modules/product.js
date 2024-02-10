@@ -2,6 +2,7 @@ const Layout = () => import('@/layout/index.vue')
 const category = () => import('@/views/product/category.vue')
 const brand = () => import('@/views/product/brand.vue')
 const categoryBrand = () => import('@/views/product/categoryBrand.vue')
+const productSpec = () => import('@/views/product/productSpec.vue')
 
 export default [
     {
@@ -36,6 +37,14 @@ export default [
                 meta: {
                     title: '分类品牌',
                 },
+            },
+            {
+                path: '/productSpec',
+                name: 'productSpec',
+                component: productSpec,
+                meta: {
+                    title: '商品规格',
+                }
             }
         ],
     },
