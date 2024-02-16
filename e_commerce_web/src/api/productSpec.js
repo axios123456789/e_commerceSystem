@@ -10,6 +10,14 @@ export const GetProductSpecPageList = (page, limit) => {
     })
 }
 
+//查询所有规格
+export const FindAllProductSpec = () => {
+    return request({
+        url: `${api_name}/findAll`,
+        method: 'get',
+    })
+}
+
 // 保存信息
 export const SaveProductSpec = productSpec => {
     return request({

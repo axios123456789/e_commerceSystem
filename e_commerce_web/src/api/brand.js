@@ -2,7 +2,7 @@ import request from "@/utils/request";
 
 const api_name = '/admin/product/brand'
 
-//查询所以品牌
+//查询所有品牌
 export const FindAllBrand = () => {
     return request({
         url: `${api_name}/findAll`,

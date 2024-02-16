@@ -3,6 +3,8 @@ package com.example.e_commerce.manager.service;
 import com.example.e_commerce.model.entity.product.ProductSpec;
 import com.github.pagehelper.PageInfo;
 
+import java.util.List;
+
 public interface ProductSpecService {
     PageInfo<ProductSpec> findByPage(Integer page, Integer limit);  //条件分页查询商品规格
 
@@ -11,4 +13,6 @@ public interface ProductSpecService {
     boolean update(ProductSpec productSpec);    //修改商品规格
 
     boolean deleteById(Long id);    //删除商品规格
+
+    List<ProductSpec> findAll();    //查询所有规格
 }

@@ -3,6 +3,7 @@ package com.example.e_commerce.manager.service.impl;
 import com.example.e_commerce.manager.mapper.CategoryBrandMapper;
 import com.example.e_commerce.manager.service.CategoryBrandService;
 import com.example.e_commerce.model.dto.product.CategoryBrandDto;
+import com.example.e_commerce.model.entity.product.Brand;
 import com.example.e_commerce.model.entity.product.CategoryBrand;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -86,5 +87,15 @@ public class CategoryBrandServiceImpl implements CategoryBrandService {
         }
 
         return true;
+    }
+
+    /**
+     * 根据分类id查询对应品牌数据
+     * @param categoryId
+     * @return
+     */
+    @Override
+    public List<Brand> findBrandByCategoryId(Long categoryId) {
+        return categoryBrandMapper.selectBrandByCategoryId(categoryId);
     }
 }

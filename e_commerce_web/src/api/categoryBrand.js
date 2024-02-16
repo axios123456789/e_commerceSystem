@@ -2,6 +2,14 @@ import request from "@/utils/request";
 
 const api_name = '/admin/product/categoryBrand'
 
+//根据分类id查询对应品牌数据
+export const FindBrandByCategoryId = (categoryId) => {
+    return request({
+        url: `${api_name}/findBrandByCategoryId/${categoryId}`,
+        method: 'get',
+    })
+}
+
 //条件分页查询分类品牌
 export const GetCategoryBrandPageList = (page, limit, searchObj) => {
     return request({

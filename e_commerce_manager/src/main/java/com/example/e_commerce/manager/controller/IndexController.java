@@ -5,7 +5,6 @@ import com.example.e_commerce.manager.service.SysMenuService;
 import com.example.e_commerce.manager.service.SysUserService;
 import com.example.e_commerce.manager.service.ValidateCodeService;
 import com.example.e_commerce.model.dto.system.LoginDto;
-import com.example.e_commerce.model.entity.system.SysUser;
 import com.example.e_commerce.model.vo.common.Result;
 import com.example.e_commerce.model.vo.common.ResultCodeEnum;
 import com.example.e_commerce.model.vo.system.LoginVo;

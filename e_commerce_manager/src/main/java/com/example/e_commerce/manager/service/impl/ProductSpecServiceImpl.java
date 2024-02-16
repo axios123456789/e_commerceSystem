@@ -85,4 +85,14 @@ public class ProductSpecServiceImpl implements ProductSpecService {
 
         return true;
     }
+
+    /**
+     * 查询所有规格
+     * @return
+     */
+    @Override
+    public List<ProductSpec> findAll() {
+        List<ProductSpec> productSpecs = productSpecMapper.selectAll();
+        return productSpecs;
+    }
 }

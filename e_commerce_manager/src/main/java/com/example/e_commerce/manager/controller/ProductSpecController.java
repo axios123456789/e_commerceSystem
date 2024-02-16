@@ -8,11 +8,20 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/admin/product/productSpec")
 public class ProductSpecController {
     @Autowired
     private ProductSpecService productSpecService;
+
+    //查询所有规格
+    @GetMapping("/findAll")
+    public Result findAll(){
+        List<ProductSpec> productSpecs = productSpecService.findAll();
+        return Result.build(productSpecs, ResultCodeEnum.SUCCESS);
+    }
 
     //商品规格条件分页查询
     @GetMapping("/{page}/{limit}")
