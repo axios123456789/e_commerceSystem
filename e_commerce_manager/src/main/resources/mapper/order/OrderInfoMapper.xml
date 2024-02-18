@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.e_commerce.manager.mapper.OrderInfoMapper">
+    <!--统计前一天的订单数据-->
+    <select id="selectStatisticsByDate" resultType="com.example.e_commerce.model.entity.order.OrderStatistics">
+        select date_format(create_time, '%Y-%m-%d') as orderDate,
+               sum(total_amount) as totalAmount,
+               count(*) as totalNum
+        from order_info
+        where date_format(create_time, '%Y-%m-%d') = #{createDate}
+        group by date_format(create_time, '%Y-%m-%d')
+    </select>
+</mapper>
