@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.e_commerce.product.mapper.ProductSkuMapper">
+<!--    查询销量排行前十的商品-->
+    <select id="selectProductSkuBySale" resultType="com.example.e_commerce.model.entity.product.ProductSku">
+        select sku.*
+        from product_sku sku
+        join product p on sku.product_id = p.id
+        where p.status = 1
+        and p.is_deleted = 0
+        and sku.is_deleted = 0
+        order by sku.sale_num desc
+        limit 10
+    </select>
+</mapper>

@@ -12,6 +12,9 @@
         <module>e_commerce_common</module>
         <module>e_commerce_manager</module>
         <module>e_commerce_model</module>
+        <module>e_commerce_server_gateway</module>
+        <module>e_commerce_service</module>
+        <module>e_commerce_service_client</module>
     </modules>
 
     <parent>

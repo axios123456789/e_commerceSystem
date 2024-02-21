@@ -1,5 +1,6 @@
 package com.example.e_commerce.manager;
 
+import com.example.e_commerce.common_log.annotation.EnableLogAspect;
 import com.example.e_commerce.manager.properties.MinioProperties;
 import com.example.e_commerce.manager.properties.UserProperties;
 import org.springframework.boot.SpringApplication;
@@ -8,6 +9,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
+@EnableLogAspect
 @SpringBootApplication
 @ComponentScan(basePackages = "com.example.e_commerce")
 @EnableConfigurationProperties(value = {UserProperties.class, MinioProperties.class})

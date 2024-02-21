@@ -7,11 +7,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="common_util" />
         <module name="e_commerce_model" />
+        <module name="service_user" />
+        <module name="service_cart" />
+        <module name="service_cart_client" />
+        <module name="service_order" />
         <module name="e_commerce_manager" />
         <module name="common_service" />
+        <module name="service_pay" />
         <module name="common_log" />
+        <module name="common_util" />
+        <module name="service_order_client" />
+        <module name="service_product_client" />
+        <module name="service_user_client" />
+        <module name="e_commerce_server_gateway" />
+        <module name="service_product" />
       </profile>
     </annotationProcessing>
   </component>
@@ -22,6 +32,18 @@
       <module name="common_util" options="-parameters" />
       <module name="e_commerce_manager" options="-parameters" />
       <module name="e_commerce_model" options="-parameters" />
+      <module name="e_commerce_server_gateway" options="-parameters" />
+      <module name="e_commerce_service" options="-parameters" />
+      <module name="e_commerce_service_client" options="-parameters" />
+      <module name="service_cart" options="-parameters" />
+      <module name="service_cart_client" options="-parameters" />
+      <module name="service_order" options="-parameters" />
+      <module name="service_order_client" options="-parameters" />
+      <module name="service_pay" options="-parameters" />
+      <module name="service_product" options="-parameters" />
+      <module name="service_product_client" options="-parameters" />
+      <module name="service_user" options="-parameters" />
+      <module name="service_user_client" options="-parameters" />
     </option>
   </component>
 </project>

@@ -1,5 +1,6 @@
 package com.example.e_commerce.manager.controller;
 
+import com.example.e_commerce.common_log.annotation.Log;
 import com.example.e_commerce.manager.service.SysUserService;
 import com.example.e_commerce.model.dto.system.AssginRoleDto;
 import com.example.e_commerce.model.dto.system.SysUserDto;
@@ -26,6 +27,7 @@ public class SysUserController {
     }
 
     //添加接口
+    @Log(title = "用户管理：添加用户", businessType = 1)
     @PostMapping("/addSysUser")
     public Result addSysUser(@RequestBody SysUser sysUser){
         boolean flag = sysUserService.addSysUser(sysUser);

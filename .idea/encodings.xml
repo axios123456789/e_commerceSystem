@@ -6,5 +6,15 @@
     <file url="file://$PROJECT_DIR$/e_commerce_common/common_util/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/e_commerce_manager/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/e_commerce_model/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/e_commerce_server_gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/e_commerce_service/service_cart/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/e_commerce_service/service_order/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/e_commerce_service/service_pay/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/e_commerce_service/service_product/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/e_commerce_service/service_user/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/e_commerce_service_client/service_cart_client/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/e_commerce_service_client/service_order_client/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/e_commerce_service_client/service_product_client/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/e_commerce_service_client/service_user_client/src/main/java" charset="UTF-8" />
   </component>
 </project>
