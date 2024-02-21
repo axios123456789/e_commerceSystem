@@ -9,4 +9,7 @@ import java.util.List;
 public interface CategoryMapper {
     //查询所有一级分类
     List<Category> selectOneCategory();
+
+    //查询所有分类
+    List<Category> selectAll();
 }

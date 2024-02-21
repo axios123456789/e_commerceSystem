@@ -19,7 +19,7 @@ import java.util.List;
 @Tag(name = "首页接口管理")
 @RestController
 @RequestMapping("/api/product/index")
-//@CrossOrigin
+@CrossOrigin
 public class IndexController {
     @Autowired
     private CategoryService categoryService;

@@ -3866,3 +3866,26 @@ java.lang.NullPointerException: Cannot invoke "String.getBytes()" because the re
 2024-02-20 19:59:30 HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@43aa8701
 2024-02-20 19:59:30 HikariPool-1 - Start completed.
 2024-02-20 21:01:30 HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m58s605ms451µs900ns).
+2024-02-21 13:31:04 Starting ManagerApplication using Java 17.0.1 with PID 16952 (D:\learnJava\javaProjectExcise\e_commerce\e_commerce_manager\target\classes started by 20183 in D:\learnJava\javaProjectExcise\e_commerce)
+2024-02-21 13:31:04 The following 1 profile is active: "dev"
+2024-02-21 13:31:05 Multiple Spring Data modules found, entering strict repository configuration mode
+2024-02-21 13:31:05 Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-02-21 13:31:05 Finished Spring Data repository scanning in 10 ms. Found 0 Redis repository interfaces.
+2024-02-21 13:31:06 Tomcat initialized with port(s): 8501 (http)
+2024-02-21 13:31:06 An older version [1.2.35] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.1]
+2024-02-21 13:31:06 Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-02-21 13:31:06 OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-02-21 13:31:06 Initializing ProtocolHandler ["http-nio-8501"]
+2024-02-21 13:31:06 Starting service [Tomcat]
+2024-02-21 13:31:06 Starting Servlet engine: [Apache Tomcat/10.1.7]
+2024-02-21 13:31:06 Initializing Spring embedded WebApplicationContext
+2024-02-21 13:31:06 Root WebApplicationContext: initialization completed in 1621 ms
+2024-02-21 13:31:08 Starting ProtocolHandler ["http-nio-8501"]
+2024-02-21 13:31:09 Tomcat started on port(s): 8501 (http) with context path ''
+2024-02-21 13:31:09 Started ManagerApplication in 4.809 seconds (process running for 5.504)
+2024-02-21 13:31:37 Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-21 13:31:37 Initializing Servlet 'dispatcherServlet'
+2024-02-21 13:31:37 Completed initialization in 2 ms
+2024-02-21 13:31:45 HikariPool-1 - Starting...
+2024-02-21 13:31:45 HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1ed08c56
+2024-02-21 13:31:45 HikariPool-1 - Start completed.

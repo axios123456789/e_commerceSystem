@@ -20,4 +20,11 @@
         and is_deleted = 0
         order by id
     </select>
+
+<!--    查询所有分类-->
+    <select id="selectAll" resultType="com.example.e_commerce.model.entity.product.Category">
+        select <include refid="columns"/> from category
+        where is_deleted = 0
+        order by order_num
+    </select>
 </mapper>
