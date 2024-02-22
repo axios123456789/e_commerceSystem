@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.e_commerce.product.mapper.ProductSkuMapper">
+    <sql id="columns">
+        id,
+        sku_code,
+        sku_name,
+        product_id,
+        thumb_img,
+        sale_price,
+        market_price,
+        cost_price,
+        stock_num,
+        sale_num,
+        sku_spec,
+        weight,
+        volume,
+        status,
+        create_time,
+        update_time,
+        is_deleted
+    </sql>
+
 <!--    查询销量排行前十的商品-->
     <select id="selectProductSkuBySale" resultType="com.example.e_commerce.model.entity.product.ProductSku">
         select sku.*
@@ -11,5 +31,54 @@
         and sku.is_deleted = 0
         order by sku.sale_num desc
         limit 10
+    </select>
+
+<!--    条件查询商品sku-->
+    <select id="selectByCondition" resultType="com.example.e_commerce.model.entity.product.ProductSku">
+        select sku.*
+        from product_sku sku
+        left join product p on sku.product_id = p.id
+        <where>
+            <if test="keyword != null and keyword != ''">
+                and sku.sku_name like CONCAT('%',#{keyword},'%')
+            </if>
+            <if test="brandId != null">
+                and p.brand_id = #{brandId}
+            </if>
+            <if test="category1Id != null">
+                and p.category1_id = #{category1Id}
+            </if>
+            <if test="category2Id != null">
+                and p.category2_id = #{category2Id}
+            </if>
+            <if test="category3Id != null">
+                and p.category3_id = #{category3Id}
+            </if>
+            and p.status = 1
+            and p.audit_status = 1
+            and sku.is_deleted = 0
+            and p.is_deleted = 0
+        </where>
+        <if test="order == 1">
+            order by sku.sale_num desc
+        </if>
+        <if test="order == 2">
+            order by sku.sale_price asc
+        </if>
+        <if test="order == 3">
+            order by sku.sale_price desc
+        </if>
+    </select>
+
+<!--    根据id查询所有-->
+    <select id="getById" resultType="com.example.e_commerce.model.entity.product.ProductSku">
+        select <include refid="columns"/> from product_sku
+        where id = #{skuId}
+    </select>
+
+<!--    根据product_id查询所有sku记录-->
+    <select id="getByProductId" resultType="com.example.e_commerce.model.entity.product.ProductSku">
+        select <include refid="columns"/> from product_sku
+        where product_id = #{productId}
     </select>
 </mapper>
