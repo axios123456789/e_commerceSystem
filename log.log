@@ -3889,3 +3889,26 @@ java.lang.NullPointerException: Cannot invoke "String.getBytes()" because the re
 2024-02-21 13:31:45 HikariPool-1 - Starting...
 2024-02-21 13:31:45 HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1ed08c56
 2024-02-21 13:31:45 HikariPool-1 - Start completed.
+2024-02-23 18:06:37 Starting ManagerApplication using Java 17.0.1 with PID 13428 (D:\learnJava\javaProjectExcise\e_commerce\e_commerce_manager\target\classes started by 20183 in D:\learnJava\javaProjectExcise\e_commerce)
+2024-02-23 18:06:37 The following 1 profile is active: "dev"
+2024-02-23 18:06:38 Multiple Spring Data modules found, entering strict repository configuration mode
+2024-02-23 18:06:38 Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-02-23 18:06:38 Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+2024-02-23 18:06:39 Tomcat initialized with port(s): 8501 (http)
+2024-02-23 18:06:39 An older version [1.2.35] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.1]
+2024-02-23 18:06:39 Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-02-23 18:06:39 OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-02-23 18:06:39 Initializing ProtocolHandler ["http-nio-8501"]
+2024-02-23 18:06:39 Starting service [Tomcat]
+2024-02-23 18:06:39 Starting Servlet engine: [Apache Tomcat/10.1.7]
+2024-02-23 18:06:39 Initializing Spring embedded WebApplicationContext
+2024-02-23 18:06:39 Root WebApplicationContext: initialization completed in 1889 ms
+2024-02-23 18:06:42 Starting ProtocolHandler ["http-nio-8501"]
+2024-02-23 18:06:42 Tomcat started on port(s): 8501 (http) with context path ''
+2024-02-23 18:06:42 Started ManagerApplication in 5.9 seconds (process running for 7.285)
+2024-02-23 18:07:17 Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-02-23 18:07:17 Initializing Servlet 'dispatcherServlet'
+2024-02-23 18:07:17 Completed initialization in 2 ms
+2024-02-23 18:07:26 HikariPool-1 - Starting...
+2024-02-23 18:07:27 HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6655840b
+2024-02-23 18:07:27 HikariPool-1 - Start completed.
