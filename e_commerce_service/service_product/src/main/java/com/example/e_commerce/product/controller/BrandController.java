@@ -18,6 +18,7 @@ public class BrandController {
     @Autowired
     private BrandService brandService;
 
+    //查询所有品牌
     @Operation(summary = "获得全部品牌")
     @GetMapping("/findAll")
     public Result findAll(){
