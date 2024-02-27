@@ -26,7 +26,7 @@ public class SmsServiceImpl implements SmsService {
     public void sendCode(String phone) {
         //1.查看是否有该手机号下的验证码
         String code = (String) redisTemplate.opsForValue().get(phone);
-        if (StringUtils.hasText(code)){
+        if (StringUtils.hasText(code)) {
             return;
         }
 
