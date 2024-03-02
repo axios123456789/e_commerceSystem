@@ -13,4 +13,6 @@ public interface ProductService {
     PageInfo<ProductSku> findByPage(Integer page, Integer limit, ProductSkuDto productSkuDto);  //分页查询商品Sku
 
     ProductItemVo item(Long skuId); //查看商品详细信息
+
+    ProductSku getBySkuId(Long skuId);  //根据skuId查询sku信息
 }

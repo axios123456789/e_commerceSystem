@@ -101,4 +101,15 @@ public class ProductServiceImpl implements ProductService {
 
         return productItemVo;
     }
+
+    /**
+     * 根据skuId查询sku信息
+     * @param skuId
+     * @return
+     */
+    @Override
+    public ProductSku getBySkuId(Long skuId) {
+        ProductSku productSku = productSkuMapper.getById(skuId);
+        return productSku;
+    }
 }

@@ -36,4 +36,11 @@ public class ProductController {
         PageInfo<ProductSku> pageInfo = productService.findByPage(page, limit, productSkuDto);
         return Result.build(pageInfo, ResultCodeEnum.SUCCESS);
     }
+
+    //远程调用：根据skuId返回sku信息
+    @GetMapping("/getBySkuId/{skuId}")
+    public ProductSku getBySkuId(@PathVariable Long skuId){
+        ProductSku productSku = productService.getBySkuId(skuId);
+        return productSku;
+    }
 }
