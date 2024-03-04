@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.e_commerce.order.mapper.OrderItemMapper">
+<!--    添加订单项记录-->
+    <insert id="save" useGeneratedKeys="true" keyProperty="id">
+        insert into order_item (
+            id,
+            order_id,
+            sku_id,
+            sku_name,
+            thumb_img,
+            sku_price,
+            sku_num
+        ) values (
+                     #{id},
+                     #{orderId},
+                     #{skuId},
+                     #{skuName},
+                     #{thumbImg},
+                     #{skuPrice},
+                     #{skuNum}
+                 )
+    </insert>
+</mapper>

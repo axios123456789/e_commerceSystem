@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.e_commerce.user.mapper.UserAddressMapper">
+    <sql id="columns">
+        id,
+        user_id,
+        name,
+        phone,
+        tag_name,
+        province_code,
+        city_code,
+        district_code,
+        address,
+        full_address,
+        is_default,
+        create_time,
+        update_time,
+        is_deleted
+    </sql>
+
+<!--    根据用户id查询用户地址列表-->
+    <select id="getUserAddressListByUserId" resultType="com.example.e_commerce.model.entity.user.UserAddress">
+        select <include refid="columns"/> from user_address
+        where user_id = #{userId} and is_deleted = 0
+    </select>
+
+<!--    根据id获取收货地址信息-->
+    <select id="getUserAddressById" resultType="com.example.e_commerce.model.entity.user.UserAddress">
+        select <include refid="columns"/> from user_address
+        where id = #{id} and is_deleted = 0
+    </select>
+</mapper>

@@ -16,4 +16,8 @@ public interface CartService {
     void allCheckCart(Integer isChecked);   //更新购物车全部选中状态
 
     void clearCart();   //清空购物车
+
+    List<CartInfo> getAllChecked(); //获取所有选中的购物车商品
+
+    void deleteChecked();   //删除生成订单的购物车商品
 }

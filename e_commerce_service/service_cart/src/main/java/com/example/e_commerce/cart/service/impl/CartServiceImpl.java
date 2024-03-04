@@ -181,4 +181,49 @@ public class CartServiceImpl implements CartService {
         //2.根据cartKey清空redis里面hash类型的数据
         redisTemplate.delete(cartKey);
     }
+
+    /**
+     * 获取所有选中的购物车商品
+     * @return
+     */
+    @Override
+    public List<CartInfo> getAllChecked() {
+        //1.构建redis中的key
+        Long userId = AuthContextUtil.getUserInfo().getId();
+        String cartKey = this.getCartKey(userId);
+
+        //2.根据key查到所有values
+        List<Object> values = redisTemplate.opsForHash().values(cartKey);
+
+        if (!CollectionUtils.isEmpty(values)) {
+            //3.将所有values中选中的购物车形成一个列表返回
+            List<CartInfo> collect = values.stream().map(value -> JSON.parseObject(value.toString(), CartInfo.class))
+                    .filter(cartInfo -> cartInfo.getIsChecked() == 1)
+                    .collect(Collectors.toList());
+            return collect;
+        }
+
+        return new ArrayList<>();
+    }
+
+    /**
+     * 删除生成订单的购物车商品
+     */
+    @Override
+    public void deleteChecked() {
+        //1.构建查询的redis的key
+        Long userId = AuthContextUtil.getUserInfo().getId();
+        String cartKey = this.getCartKey(userId);
+
+        //2.根据key查询所有values
+        List<Object> values = redisTemplate.opsForHash().values(cartKey);
+
+        //3.删除选中的商品
+        if (!CollectionUtils.isEmpty(values)){
+            values.stream().map(value -> JSON.parseObject(value.toString(), CartInfo.class))
+                    .filter(cartInfo -> cartInfo.getIsChecked() == 1)
+                    .forEach(cartInfo -> redisTemplate.opsForHash().delete(cartKey,
+                            String.valueOf(cartInfo.getSkuId())));
+        }
+    }
 }
