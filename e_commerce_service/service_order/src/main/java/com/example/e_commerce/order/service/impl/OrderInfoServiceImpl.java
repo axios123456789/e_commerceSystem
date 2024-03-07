@@ -20,6 +20,8 @@ import com.example.e_commerce.order.mapper.OrderInfoMapper;
 import com.example.e_commerce.order.mapper.OrderItemMapper;
 import com.example.e_commerce.order.mapper.OrderLogMapper;
 import com.example.e_commerce.order.service.OrderInfoService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -168,5 +170,69 @@ public class OrderInfoServiceImpl implements OrderInfoService {
 
         //8.返回订单id
         return orderInfo.getId();
+    }
+
+    /**
+     * 获取订单信息
+     * @param orderId
+     * @return
+     */
+    @Override
+    public OrderInfo getOrderInfo(Long orderId) {
+        return orderInfoMapper.getOrderInfoById(orderId);
+    }
+
+    /**
+     * 立即购买
+     * @param skuId
+     * @return
+     */
+    @Override
+    public TradeVo buy(Long skuId) {
+        //1.远程调用：根据skuId获取商品sku信息
+        ProductSku productSku = productFeignClient.getBySkuId(skuId);
+
+        //2.封装数据到list<orderItem>中
+        List<OrderItem> orderItemList = new ArrayList<>();
+        OrderItem orderItem = new OrderItem();
+        orderItem.setSkuId(skuId);
+        orderItem.setSkuName(productSku.getSkuName());
+        orderItem.setSkuNum(1);
+        orderItem.setSkuPrice(productSku.getSalePrice());
+        orderItem.setThumbImg(productSku.getThumbImg());
+        orderItemList.add(orderItem);
+
+        //3.封装数据到tradeVo中返回
+        TradeVo tradeVo = new TradeVo();
+        tradeVo.setOrderItemList(orderItemList);
+        tradeVo.setTotalAmount(productSku.getSalePrice());
+
+        return tradeVo;
+    }
+
+    /**
+     * 获取订单分页列表
+     * @param page
+     * @param limit
+     * @param orderStatus
+     * @return
+     */
+    @Override
+    public PageInfo<OrderInfo> findOrderPage(Integer page, Integer limit, Integer orderStatus) {
+        //1.设置分页参数
+        PageHelper.startPage(page, limit);
+
+        //2.根据订单状态查询所有订单列表
+        Long userId = AuthContextUtil.getUserInfo().getId();
+        List<OrderInfo> orderInfoList = orderInfoMapper.findUserPage(userId, orderStatus);
+        orderInfoList.forEach(orderInfo -> {
+            List<OrderItem> orderItemList = orderItemMapper.findByOrderId(orderInfo.getId());
+            orderInfo.setOrderItemList(orderItemList);
+        });
+
+        //3.封装数据成最终pageInfo<orderInfo>
+        PageInfo<OrderInfo> pageInfo = new PageInfo<>(orderInfoList);
+
+        return pageInfo;
     }
 }

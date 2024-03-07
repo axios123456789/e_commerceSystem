@@ -21,4 +21,13 @@
                      #{skuNum}
                  )
     </insert>
+
+<!--    根据订单id查询订单项-->
+    <select id="findByOrderId" resultType="com.example.e_commerce.model.entity.order.OrderItem">
+        select *
+        from order_item
+        where order_id=#{id}
+          and is_deleted=0
+        order by id desc
+    </select>
 </mapper>
