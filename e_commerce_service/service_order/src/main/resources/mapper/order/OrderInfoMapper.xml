@@ -105,4 +105,10 @@
         </where>
         order by id desc
     </select>
+
+<!--    根据订单编号查询订单信息-->
+    <select id="getOrderInfoByOrderNo" resultType="com.example.e_commerce.model.entity.order.OrderInfo">
+        select <include refid="columns"/> from order_info
+        where order_no = #{orderNo} and is_deleted = 0
+    </select>
 </mapper>

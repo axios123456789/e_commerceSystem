@@ -15,4 +15,7 @@ public interface OrderInfoMapper {
 
     //根据用户id和状态查询
     List<OrderInfo> findUserPage(Long userId, Integer orderStatus);
+
+    //根据订单编号查询订单信息
+    OrderInfo getOrderInfoByOrderNo(String orderNo);
 }

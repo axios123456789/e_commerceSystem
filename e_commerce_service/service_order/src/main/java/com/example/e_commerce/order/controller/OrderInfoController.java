@@ -8,6 +8,7 @@ import com.example.e_commerce.model.vo.h5.TradeVo;
 import com.example.e_commerce.order.service.OrderInfoService;
 import com.github.pagehelper.PageInfo;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -56,5 +57,12 @@ public class OrderInfoController {
                        @RequestParam(required = false, defaultValue = "") Integer orderStatus){
         PageInfo<OrderInfo> pageInfo = orderInfoService.findOrderPage(page, limit, orderStatus);
         return Result.build(pageInfo, ResultCodeEnum.SUCCESS);
+    }
+
+    //远程调用：根据订单编号获取订单信息
+    @Operation(summary = "获取订单信息")
+    @GetMapping("/auth/getOrderInfoByOrderNo/{orderNo}")
+    public OrderInfo getOrderInfoByOrderNo(@Parameter(name = "orderNo", description = "订单编号", required = true) @PathVariable String orderNo){
+        return orderInfoService.getOrderInfoByOrderNo(orderNo);
     }
 }
