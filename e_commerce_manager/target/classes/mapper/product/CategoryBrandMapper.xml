@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.e_commerce.manager.mapper.CategoryBrandMapper">
+<!--    添加-->
+    <insert id="add">
+        insert into category_brand(
+            brand_id,
+            category_id
+        )values (
+            #{brandId},
+            #{categoryId}
+       )
+    </insert>
+
+<!--    修改-->
+    <update id="update">
+        update category_brand set
+
+        brand_id = #{brandId},
+        category_id = #{categoryId},
+        update_time = now()
+
+        where id = #{id}
+    </update>
+
+    <select id="selectAllByCondition" resultType="com.example.e_commerce.model.entity.product.CategoryBrand">
+        select cb.*,
+               c.name as categoryName,
+               b.name as brandName,
+               b.logo
+        from category_brand cb
+                 join brand b on cb.brand_id = b.id
+                 join category c on cb.category_id = c.id
+        <where>
+            <if test="brandId != null and brandId != ''">
+                and cb.brand_id = #{brandId}
+            </if>
+            <if test="categoryId != null and categoryId != ''">
+                and cb.category_id = #{categoryId}
+            </if>
+            and cb.is_deleted = 0
+            and c.is_deleted = 0
+            and b.is_deleted = 0
+        </where>
+        order by cb.id desc
+    </select>
+
+<!--    根据分类id查询对应品牌数据-->
+    <select id="selectBrandByCategoryId" resultType="com.example.e_commerce.model.entity.product.Brand">
+        select b.*
+
+        from category_brand cb
+        join brand b on cb.brand_id = b.id
+
+        where cb.category_id = #{categoryId} and cb.is_deleted = 0 and b.is_deleted = 0
+        order by cb.id desc
+    </select>
+</mapper>

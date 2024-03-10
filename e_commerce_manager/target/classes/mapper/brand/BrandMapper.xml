@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.e_commerce.manager.mapper.BrandMapper">
+    <sql id="columns">
+        id,
+        name,
+        logo,
+        create_time,
+        update_time,
+        is_deleted
+    </sql>
+
+<!--    添加品牌-->
+    <insert id="addBrand">
+        insert into brand(
+            name,
+            logo
+        )values (
+            #{name},
+            #{logo}
+       )
+    </insert>
+
+<!--    修改品牌-->
+    <update id="updateBrand">
+        update brand
+        set
+        <if test="name != null and name != ''">
+            name = #{name},
+        </if>
+        <if test="logo != null and logo != ''">
+            logo = #{logo},
+        </if>
+        update_time = now()
+
+        where id = #{id}
+    </update>
+
+    <!--查询所有品牌列表-->
+    <select id="selectByPage" resultType="com.example.e_commerce.model.entity.product.Brand">
+        select <include refid="columns"/>
+        from brand
+        where is_deleted = 0
+        order by id desc
+    </select>
+</mapper>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.e_commerce.user.mapper.UserInfoMapper">
+    <sql id="columns">
+        id,
+        username,
+        password,
+        nick_name,
+        phone,
+        avatar,
+        sex,
+        memo,
+        open_id,
+        union_id,
+        last_login_ip,
+        last_login_time,
+        status,
+        create_time,
+        update_time,
+        is_deleted
+    </sql>
+
+<!--    保存数据-->
+    <insert id="save" useGeneratedKeys="true" keyProperty="id">
+        insert into user_info (
+            id,
+            username,
+            password,
+            nick_name,
+            avatar,
+            sex,
+            phone,
+            memo,
+            open_id,
+            union_id,
+            last_login_ip,
+            last_login_time,
+            status
+        ) values (
+                     #{id},
+                     #{username},
+                     #{password},
+                     #{nickName},
+                     #{avatar},
+                     #{sex},
+                     #{phone},
+                     #{memo},
+                     #{openId},
+                     #{unionId},
+                     #{lastLoginIp},
+                     #{lastLoginTime},
+                     #{status}
+                 )
+    </insert>
+
+    <!--    根据用户名查询用户数据-->
+    <select id="selectByUsername" resultType="com.example.e_commerce.model.entity.user.UserInfo">
+        select <include refid="columns"/> from user_info
+        where username = #{username} and is_deleted = 0
+    </select>
+</mapper>

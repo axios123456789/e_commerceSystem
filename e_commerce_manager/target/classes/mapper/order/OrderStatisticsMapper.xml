@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.e_commerce.manager.mapper.OrderStatisticsMapper">
+<!--    添加统计到的前一天数据到订单统计结果表中-->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        insert into order_statistics (
+                order_date,
+                total_amount,
+                total_num
+        )
+        values (
+                #{orderDate},
+                #{totalAmount},
+                #{totalNum}
+        )
+    </insert>
+
+<!--    查询所有订单统计结果-->
+    <select id="selectAll" resultType="com.example.e_commerce.model.entity.order.OrderStatistics">
+        select * from order_statistics
+        <where>
+            <if test="createTimeBegin != null and createTimeBegin != ''">
+                and order_date >= #{createTimeBegin}
+            </if>
+            <if test="createTimeEnd != null and createTimeEnd != ''">
+                and order_date &lt;= #{createTimeEnd}
+            </if>
+        </where>
+        order by order_date
+    </select>
+</mapper>

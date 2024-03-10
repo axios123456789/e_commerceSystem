@@ -4004,3 +4004,76 @@ java.lang.NullPointerException: Cannot invoke "String.getBytes()" because the re
 2024-03-02 20:53:49 HikariPool-1 - Starting...
 2024-03-02 20:53:49 HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3e50ab73
 2024-03-02 20:53:49 HikariPool-1 - Start completed.
+2024-03-08 18:26:43 Starting ManagerApplication using Java 17.0.1 with PID 9068 (D:\learnJava\javaProjectExcise\e_commerce\e_commerce_manager\target\classes started by 20183 in D:\learnJava\javaProjectExcise\e_commerce)
+2024-03-08 18:26:43 The following 1 profile is active: "dev"
+2024-03-08 18:26:44 Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-08 18:26:44 Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-08 18:26:44 Finished Spring Data repository scanning in 15 ms. Found 0 Redis repository interfaces.
+2024-03-08 18:26:45 Tomcat initialized with port(s): 8501 (http)
+2024-03-08 18:26:45 An older version [1.2.35] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.1]
+2024-03-08 18:26:45 Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-03-08 18:26:45 OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-03-08 18:26:45 Initializing ProtocolHandler ["http-nio-8501"]
+2024-03-08 18:26:45 Starting service [Tomcat]
+2024-03-08 18:26:45 Starting Servlet engine: [Apache Tomcat/10.1.7]
+2024-03-08 18:26:45 Initializing Spring embedded WebApplicationContext
+2024-03-08 18:26:45 Root WebApplicationContext: initialization completed in 2337 ms
+2024-03-08 18:26:49 Starting ProtocolHandler ["http-nio-8501"]
+2024-03-08 18:26:49 Tomcat started on port(s): 8501 (http) with context path ''
+2024-03-08 18:26:49 Started ManagerApplication in 6.724 seconds (process running for 7.7)
+2024-03-08 18:27:23 Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-08 18:27:23 Initializing Servlet 'dispatcherServlet'
+2024-03-08 18:27:23 Completed initialization in 2 ms
+2024-03-08 18:27:32 HikariPool-1 - Starting...
+2024-03-08 18:27:32 HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6efd71f7
+2024-03-08 18:27:32 HikariPool-1 - Start completed.
+2024-03-08 19:42:05 HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=46m2s840ms273µs300ns).
+2024-03-08 21:08:04 HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=49m28s232ms906µs700ns).
+2024-03-09 19:24:52 Starting ManagerApplication using Java 17.0.1 with PID 4036 (D:\learnJava\javaProjectExcise\e_commerce\e_commerce_manager\target\classes started by 20183 in D:\learnJava\javaProjectExcise\e_commerce)
+2024-03-09 19:24:52 The following 1 profile is active: "dev"
+2024-03-09 19:24:53 Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-09 19:24:53 Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-09 19:24:53 Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2024-03-09 19:24:54 Tomcat initialized with port(s): 8501 (http)
+2024-03-09 19:24:54 An older version [1.2.35] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.1]
+2024-03-09 19:24:54 Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-03-09 19:24:54 OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-03-09 19:24:54 Initializing ProtocolHandler ["http-nio-8501"]
+2024-03-09 19:24:54 Starting service [Tomcat]
+2024-03-09 19:24:54 Starting Servlet engine: [Apache Tomcat/10.1.7]
+2024-03-09 19:24:54 Initializing Spring embedded WebApplicationContext
+2024-03-09 19:24:54 Root WebApplicationContext: initialization completed in 1626 ms
+2024-03-09 19:24:56 Starting ProtocolHandler ["http-nio-8501"]
+2024-03-09 19:24:56 Tomcat started on port(s): 8501 (http) with context path ''
+2024-03-09 19:24:56 Started ManagerApplication in 5.087 seconds (process running for 6.091)
+2024-03-09 19:25:57 Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-09 19:25:57 Initializing Servlet 'dispatcherServlet'
+2024-03-09 19:25:57 Completed initialization in 1 ms
+2024-03-09 19:26:08 HikariPool-1 - Starting...
+2024-03-09 19:26:08 HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7835070
+2024-03-09 19:26:08 HikariPool-1 - Start completed.
+2024-03-09 20:19:08 HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=58s461ms509µs200ns).
+2024-03-10 12:24:46 Starting ManagerApplication using Java 17.0.1 with PID 18260 (D:\learnJava\javaProjectExcise\e_commerce\e_commerce_manager\target\classes started by 20183 in D:\learnJava\javaProjectExcise\e_commerce)
+2024-03-10 12:24:46 The following 1 profile is active: "dev"
+2024-03-10 12:24:47 Multiple Spring Data modules found, entering strict repository configuration mode
+2024-03-10 12:24:47 Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2024-03-10 12:24:47 Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2024-03-10 12:24:48 Tomcat initialized with port(s): 8501 (http)
+2024-03-10 12:24:48 An older version [1.2.35] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.1]
+2024-03-10 12:24:48 Loaded Apache Tomcat Native library [1.2.35] using APR version [1.7.0].
+2024-03-10 12:24:48 OpenSSL successfully initialized [OpenSSL 1.1.1q  5 Jul 2022]
+2024-03-10 12:24:48 Initializing ProtocolHandler ["http-nio-8501"]
+2024-03-10 12:24:48 Starting service [Tomcat]
+2024-03-10 12:24:48 Starting Servlet engine: [Apache Tomcat/10.1.7]
+2024-03-10 12:24:48 Initializing Spring embedded WebApplicationContext
+2024-03-10 12:24:48 Root WebApplicationContext: initialization completed in 1753 ms
+2024-03-10 12:24:50 Starting ProtocolHandler ["http-nio-8501"]
+2024-03-10 12:24:50 Tomcat started on port(s): 8501 (http) with context path ''
+2024-03-10 12:24:50 Started ManagerApplication in 5.081 seconds (process running for 5.927)
+2024-03-10 12:25:31 Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-10 12:25:31 Initializing Servlet 'dispatcherServlet'
+2024-03-10 12:25:31 Completed initialization in 1 ms
+2024-03-10 12:25:40 HikariPool-1 - Starting...
+2024-03-10 12:25:41 HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3a182555
+2024-03-10 12:25:41 HikariPool-1 - Start completed.
+2024-03-10 13:14:02 HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m51s68ms358µs400ns).
